@@ -1,0 +1,5 @@
+{
+  "name": "rails-capybara-headless",
+  "private": true,
+  "dependencies": {}
+}

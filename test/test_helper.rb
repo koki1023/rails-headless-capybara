@@ -1,0 +1,17 @@
+require File.expand_path('../../config/environment', __FILE__)
+require 'rails/test_help'
+
+Capybara.register_driver :headless_chrome do |app|
+  capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
+    chromeOptions: { args: %w[headless disable-gpu] }
+  )
+
+  Capybara::Selenium::Driver.new(
+    app,
+    browser: :chrome,
+    desired_capabilities: capabilities
+  )
+end
+
+class ActiveSupport::TestCase
+end
